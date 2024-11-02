@@ -1,0 +1,15 @@
+<h2>Search for Author</h2>
+
+<label for="authorId">Author ID:</label>
+<input type="number" id="authorId" (input)="updateAuthorId($event)" />
+<button (click)="searchAuthor()">Search</button>
+
+<div *ngIf="author">
+  <h3>Author Details</h3>
+  <p><strong>First Name:</strong> {{ author?.firstName || 'Not available' }}</p>
+  <p><strong>Last Name:</strong> {{ author?.lastName || 'Not available' }}</p>
+</div>
+
+<div *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
